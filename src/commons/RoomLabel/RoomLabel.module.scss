@@ -1,0 +1,15 @@
+.room-label-wrapper {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  .room-color {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+  }
+  .room-status {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}

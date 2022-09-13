@@ -1,0 +1,31 @@
+.room-wrapper {
+  position: relative;
+  height: 6.7rem;
+  color: black;
+  .room-number {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+  }
+  .room-type {
+    position: absolute;
+    top: 0.2rem;
+    right: 1.2rem;
+  }
+  .room-person {
+    position: absolute;
+    top: 2.6rem;
+    right: 1.4rem;
+  }
+  .room-owner {
+    position: absolute;
+    bottom: 0;
+    left: 0.2rem;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
