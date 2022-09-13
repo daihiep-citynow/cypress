@@ -8,7 +8,7 @@ import locales from "../locales";
 export const LocalesContext = createContext();
 
 export const LocalesProvider = ({ children }) => {
-  const [local, setLocal] = useLocalStorage("lang", "vi");
+  const [local, setLocal] = useLocalStorage("lang", "en");
 
   const value = useMemo(
     () => ({ languages: locales[local], setLocal }),

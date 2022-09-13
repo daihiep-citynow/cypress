@@ -1,7 +1,5 @@
 // libs
 import React from "react";
-// const
-import { roomStatusList } from "@/constants";
 // others
 import styles from "./RoomLabel.module.scss";
 
@@ -13,7 +11,7 @@ const RoomLabel = ({ roomStatus, roomColor }) => (
       }}
       className={styles["room-color"]}
     />
-    <div className={styles["room-status"]}>{roomStatusList[roomStatus]}</div>
+    <div className={styles["room-status"]}>{roomStatus}</div>
   </div>
 );
 
