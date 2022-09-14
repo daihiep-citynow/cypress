@@ -5,12 +5,15 @@ import Room from "@/commons/Room";
 // data
 import { roomData, arrStatus } from "@/mocks";
 // context
-import { PageContext } from "@/contexts";
+import { PageContext, RefreshContext } from "@/contexts";
 // others
 import styles from "./HomeContent.module.scss";
 
 const HomeContent = () => {
+  const [count, setCount] = useState(0);
   const { page } = useContext(PageContext);
+  const { refresh } = useContext(RefreshContext);
+
   const [data, setData] = useState(
     roomData.slice((page - 1) * 140, page * 140)
   );
@@ -27,16 +30,24 @@ const HomeContent = () => {
   }, [data]);
 
   useEffect(() => {
-    setData(roomData.slice((page - 1) * 140, page * 140));
-  }, [page]);
+    if (count === 0) {
+      setCount(1);
+      return;
+    }
+
+    handleRefresh();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refresh]);
 
   useEffect(() => {
-    window.addEventListener("refresh", handleRefresh);
+    if (count === 0) {
+      setCount(1);
+      return;
+    }
 
-    return () => {
-      window.removeEventListener("refresh", handleRefresh);
-    };
-  }, [handleRefresh]);
+    setData(roomData.slice((page - 1) * 140, page * 140));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   return (
     <div className={styles["home-content-wrapper"]}>

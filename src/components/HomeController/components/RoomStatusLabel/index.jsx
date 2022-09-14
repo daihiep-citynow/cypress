@@ -1,20 +1,28 @@
 // libs
-import React from "react";
+import React, { useContext } from "react";
 // components
-import RoomLabelVacant from "@/components/RoomLabelVacant";
-import RoomLabelCheckin from "@/components/RoomLabelCheckin";
-import RoomLabelAlready from "@/components/RoomLabelSAlready";
-import RoomLabelStaying from "@/components/RoomLabelStaying";
+import RoomLabel from "@/commons/RoomLabel";
+// hooks
+import { LocalesContext } from "@/hooks/useLocales";
+// data
+import { roomStatusList } from "@/mocks";
 // others
 import styles from "./RoomStatusLabel.module.scss";
 
-const RoomStatusLabel = () => (
-  <div className={styles["room-status-label-wrapper"]}>
-    <RoomLabelVacant />
-    <RoomLabelCheckin />
-    <RoomLabelAlready />
-    <RoomLabelStaying />
-  </div>
-);
+const RoomStatusLabel = () => {
+  const { languages } = useContext(LocalesContext);
+
+  return (
+    <div className={styles["room-status-label-wrapper"]}>
+      {roomStatusList.map(({ status, color }) => (
+        <RoomLabel
+          key={status}
+          roomStatus={languages[status]}
+          roomColor={color}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default RoomStatusLabel;

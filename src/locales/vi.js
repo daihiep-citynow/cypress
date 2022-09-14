@@ -1,10 +1,10 @@
 module.exports = {
-  "home.controller.vacant": "Chỗ trống",
-  "home.controller.notYetCheckin": "Chưa nhận phòng",
-  "home.controller.staying": "Đang ở",
-  "home.controller.alreadyOut": "Đã trả phòng",
-  "home.controller.page": "Trang",
-  "home.controller.checkout": "Hiển thị",
-  "home.controller.checkoutHide": "Tạm ẩn",
-  "home.controller.refresh": "Làm mới"
+  VACANT: "Phòng trống",
+  NOT_YET_CHECKIN: "Chưa nhận",
+  STAYING: "Đang ở",
+  ALREADY_OUT: "Đã trả",
+  PAGE: "Trang",
+  CHECKOUT: "Hiển thị",
+  CHECKOUT_HIDE: "Tạm ẩn",
+  REFRESH: "Làm mới"
 };
