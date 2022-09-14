@@ -5,5 +5,6 @@ module.exports = {
   "home.controller.alreadyOut": "Đã trả phòng",
   "home.controller.page": "Trang",
   "home.controller.checkout": "Hiển thị",
+  "home.controller.checkoutHide": "Tạm ẩn",
   "home.controller.refresh": "Làm mới"
 };

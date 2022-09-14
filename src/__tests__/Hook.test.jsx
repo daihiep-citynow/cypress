@@ -4,14 +4,15 @@ import { render, screen } from "@testing-library/react";
 // components
 import App from "@/App";
 
-describe("test", () => {
+describe("test page", () => {
   test("case1", () => {
     // arrange
-    const output = "Happy coding";
+    // const input = "1";
+    const output = "1";
     // action
     render(<App />);
     // assert
-    const vietnameseSongs = screen.getByTestId("app").textContent;
-    expect(vietnameseSongs).toEqual(output);
+    const pageNumber = screen.getByTestId("page-number").textContent;
+    expect(pageNumber).toEqual(output);
   });
 });

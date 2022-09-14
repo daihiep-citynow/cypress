@@ -1,16 +1,17 @@
 // libs
-import React, { useState } from "react";
+import React, { useContext } from "react";
+// context
+import { PageContext } from "@/contexts/pageContext";
 // others
 import styles from "./PageNumber.module.scss";
 
 const PageNumber = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [currentPage, setCurrentPage] = useState(1);
+  const { page } = useContext(PageContext);
 
   return (
     <div className={styles["page-number-wrapper"]}>
       <span>PAGE: </span>
-      <span>{currentPage}</span>/<span>3</span>
+      <span data-testid="page-number">{page}</span>/<span>3</span>
     </div>
   );
 };

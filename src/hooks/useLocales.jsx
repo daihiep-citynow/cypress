@@ -11,7 +11,7 @@ export const LocalesProvider = ({ children }) => {
   const [local, setLocal] = useLocalStorage("lang", "en");
 
   const value = useMemo(
-    () => ({ languages: locales[local], setLocal }),
+    () => ({ languages: locales[local], setLocal, local }),
     [local, setLocal]
   );
 
