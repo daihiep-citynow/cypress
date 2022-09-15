@@ -6,7 +6,10 @@ import { Home, FourOhFour } from "../pages";
 // others
 import configs from "../configs";
 
-const publicRoutes = [{ id: 1, path: configs.routes.home, component: Home }];
+const publicRoutes = [
+  { id: 1, path: configs.routes.home, component: Home },
+  { id: 2, path: configs.routes.fourOhFour, component: FourOhFour }
+];
 
 const AppRoutes = () => (
   <Routes>
@@ -15,7 +18,6 @@ const AppRoutes = () => (
 
       return <Route key={id} path={path} element={<Page />} />;
     })}
-    <Route path="*" element={<FourOhFour />} />
   </Routes>
 );
 

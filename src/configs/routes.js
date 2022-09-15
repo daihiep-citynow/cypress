@@ -1,5 +1,6 @@
 const routes = {
-  home: "/"
+  home: "/",
+  fourOhFour: "*"
 };
 
 export default routes;
