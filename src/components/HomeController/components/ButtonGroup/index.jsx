@@ -10,7 +10,12 @@ import styles from "./ButtonGroup.module.scss";
 const ButtonGroup = () => (
   <div className={styles["button-group-wrapper"]}>
     {buttonList.map((button) => (
-      <Button key={button.key} title={button.key} icon={button.icon} />
+      <Button
+        key={button.key}
+        test={button.key}
+        title={button.key}
+        icon={button.icon}
+      />
     ))}
   </div>
 );

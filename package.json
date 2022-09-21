@@ -20,12 +20,18 @@
     "web-vitals": "^1.1.1"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@badeball/cypress-cucumber-preprocessor": "^13.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
     "@craco/craco": "^5.6.2",
     "babel-eslint": "^10.1.0",
+    "cypress": "^10.8.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-babel": "^9.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -44,7 +50,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "craco test --coverage --watchAll",
     "eject": "craco eject",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint --cache --fix --ext .js,.jsx ./src",
@@ -52,7 +58,8 @@
     "prettier": "prettier -c \"**/src/**\" --write",
     "lint-staged:js": "eslint --cache --fix --ext .js,.jsx",
     "lint-staged:style": "stylelint --fix --syntax scss",
-    "lint-staged:prettier": "prettier -c --write"
+    "lint-staged:prettier": "prettier -c --write",
+    "cypress": "cypress run --headless --browser chrome"
   },
   "eslintConfig": {
     "extends": [

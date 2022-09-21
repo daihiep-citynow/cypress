@@ -50,7 +50,7 @@ const HomeContent = () => {
   }, [page]);
 
   return (
-    <div className={styles["home-content-wrapper"]}>
+    <div data-test-id="home-content" className={styles["home-content-wrapper"]}>
       {data.map((room) => (
         <Room key={room.id} room={room} />
       ))}

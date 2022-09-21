@@ -8,7 +8,7 @@ import { LocalesContext } from "@/hooks/useLocales";
 // others
 import styles from "./Button.module.scss";
 
-const Button = ({ title, icon }) => {
+const Button = ({ title, icon, test }) => {
   const { languages, local, setLocal } = useContext(LocalesContext);
   const { page, setPage } = useContext(PageContext);
   const { checkout, setCheckout } = useContext(CheckoutContext);
@@ -112,6 +112,7 @@ const Button = ({ title, icon }) => {
         title === "F4" && checkout === 1 && styles["button-wrapper--active"]
       )}
       onClick={() => handleClick(title)}
+      data-test-id={test}
     >
       <div className={styles["button-title"]}>{title}</div>
       <div className={styles["button-icon"]}>{renderIcon()}</div>
