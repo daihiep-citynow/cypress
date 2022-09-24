@@ -59,7 +59,7 @@
     "lint-staged:js": "eslint --cache --fix --ext .js,.jsx",
     "lint-staged:style": "stylelint --fix --syntax scss",
     "lint-staged:prettier": "prettier -c --write",
-    "cypress": "cypress run --headless --browser chrome"
+    "cypress": "cypress run --config video=false --headless --browser chrome"
   },
   "eslintConfig": {
     "extends": [
